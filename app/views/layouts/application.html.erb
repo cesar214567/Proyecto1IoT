@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fishup | Get a rod, we'll give you a spot </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+    <%= render 'shared/navbar' %>
+    <%# search bar  %>
+    <%= render 'shared/flashes' %>
+
+    <%= yield %>
+
+
+ <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2021 Fishup Company, Inc</p>
+
+        <%= image_tag "https://res.cloudinary.com/ddlmgs04n/image/upload/ar_1:1,b_rgb:f4f4f4,bo_5px_solid_rgb:ffffff,c_fill,g_auto,r_max,w_1000/v1634068982/1_wzkfet.png", style:"height: 60px; width: 55px; margin-left: 5px" %>
+
+
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      </ul>
+    </footer>
+  </div>
+</body>
+</html>

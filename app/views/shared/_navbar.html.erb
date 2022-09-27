@@ -1,0 +1,43 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="height: 73px;">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "https://res.cloudinary.com/ddlmgs04n/image/upload/v1634069020/Fish%20up/1_nfljg3.png", style:"height: 65px; width: 70px; margin-left: 5px" %>
+  <% end %>
+
+  <div class="navbar-medium">
+    <% if user_signed_in? %>
+      <span><%= link_to "Home", root_path %></span>
+      <h4>|</h4>
+      <span><%= link_to "My Restaurants", restaurants_path %></span>
+
+    <% end %>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto dropdown">
+      <% if user_signed_in? %>
+
+        <li class="nav-item active ">
+          <div class="py-1 px-2">
+            <%= current_user.full_name %>
+          </div>
+        </li>
+
+        <li class="nav-item ">
+            <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+           <div class="dropdown-menu-right dropdown-menu " >
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to  new_user_session_path, class: "nav-link" do %>
+              login
+            <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+          <% end %>
+        </li>
+
+      <% end %>
+    </ul>
+  </div>
+</div>

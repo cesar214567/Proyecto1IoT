@@ -1,0 +1,12 @@
+
+<%= link_to restaurant_dish_path(dish) do %>
+  <div class="dish-card mb-3">
+    <div class="dish-image">
+      <%= cl_image_tag dish.image.key, width: 200, height: 150, crop: :fit %>
+    </div>
+    <div class="dish-info vertical-scroll">
+        <h1 class="my-3"> <%= dish.name %></h1>
+        <p><strong>Description:</strong><%= dish.description %></p>
+      </div>
+  </div>
+<% end %>

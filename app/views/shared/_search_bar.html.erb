@@ -1,0 +1,15 @@
+<%= form_tag path, method: :get, class: "row my-3" do %>
+  <div class="col-auto">
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search by name or dish"
+    %>
+  </div>
+  <div class="col-auto">
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  </div>
+  <div class="col-auto ml-3">
+    <div class="filtro " ><h6><%=link_to "create new restaurant", new_restaurant_path,class:"btn btn-primary" %></h6></div>
+  </div>
+<% end %>

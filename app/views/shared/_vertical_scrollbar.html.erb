@@ -1,0 +1,15 @@
+<div class="ml-5 <%= vh %> w-100">
+  <div class="vertical-scroll h-100">
+    <div class="list">
+      <% array.each do |element| %>
+        <% if element.is_a? Restaurant %>
+          <%= render "shared/restaurants_card", restaurant: element  %>
+        <% elsif element.is_a? Dish %>
+          <%= render "shared/restaurant_dishes_card", dish: element  %>
+        <% elsif element.is_a? Ingredient %>
+          <%= render "shared/dish_ingredients_card", ingredient: element  %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+
+<div class="container filtros">
+  </div>
+
+<div class="mx-5 d-flex mt-3">
+
+  <div class = "col-5">
+    <div class="inline">
+    <%= render "shared/search_bar", path: restaurants_path %>
+
+    </div>
+    <%= render "shared/vertical_scrollbar", array: @restaurants, vh: "vh-90" %>
+
+
+  </div>
+
+  <div
+    id="map-spot" class="col-7 map-spot"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    >
+  </div>
+
+
+
+</div>
