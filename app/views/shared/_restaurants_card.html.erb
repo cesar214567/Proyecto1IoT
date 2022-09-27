@@ -1,0 +1,14 @@
+
+<%= link_to restaurant_path(restaurant) do %>
+  <div class="restaurant-card mb-3">
+    <div class="restaurant-image">
+      <%= cl_image_tag restaurant.images.first.key, width: 200, height: 150, crop: :fit, :class => ""%>
+    </div>
+    <div class="restaurant-info">
+      <h1> <%= restaurant.name %></h1>
+      <% result = restaurant.loc.nil? ? nil : restaurant.loc.split(",") %>
+      <h2> <%= result[1] %></h2>
+      <p><%= restaurant.description %></p>
+    </div>
+  </div>
+<% end %>

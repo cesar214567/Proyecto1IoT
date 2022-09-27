@@ -1,0 +1,9 @@
+
+<div class="dish-card mb-3">
+  <div class="dish-image">
+    <%= cl_image_tag ingredient.image.key, width: 200, height: 150, crop: :fit %>
+  </div>
+  <div class="dish-info vertical-scroll">
+      <h1 class="my-3"> <%= ingredient.name %></h1>
+    </div>
+</div>

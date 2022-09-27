@@ -1,0 +1,21 @@
+
+<div class="d-flex justify-content-center">
+  <div class="col-4 bg-white mt-5 rounded pb-5">
+    <h2 class="pt-3">Create a new dish</h2>
+    <%= simple_form_for [@restaurant,@dish] do |f| %>
+      <div class="row">
+        <div class="col">
+        <%= f.input :name,class: "form-control"%>
+        </div>
+        <div class="col">
+          <%= f.input :cost, class: "form-control"%>
+        </div>
+      </div>
+      <%= f.input :description,class: "mb-3"%>
+      <br>
+      <%= f.input :image, class: "mt-3"%>
+
+      <%= f.submit "Create Dish", class: "btn btn-primary mt-3" %>
+    <% end %>
+  </div>
+</div>

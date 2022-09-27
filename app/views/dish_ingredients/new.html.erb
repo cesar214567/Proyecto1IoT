@@ -1,0 +1,10 @@
+
+<div class="d-flex justify-content-center">
+  <div class="col-4 bg-white mt-5 rounded pb-5">
+    <h2 class="pt-3">Add a new Ingredient</h2>
+    <%= simple_form_for [@dish,@dish_ingredient] do |f| %>
+      <%= f.association :ingredient, :class => "form-control"%>
+      <%= f.submit "Add ingredient", class: "btn btn-primary mt-3" %>
+    <% end %>
+  </div>
+</div>

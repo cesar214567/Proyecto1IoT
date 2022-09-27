@@ -1,0 +1,19 @@
+
+<div class="d-flex justify-content-center">
+  <div class="col-4 bg-white mt-5 rounded pb-5">
+    <h2 class="pt-3">Create a new restaurant</h2>
+    <%= simple_form_for @restaurant do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description,class: "mb-3"%>
+      <%= f.input :latitude, class: "form-control", as: :hidden %>
+      <%= f.input :longitude, class: "form-control", as: :hidden%>
+      <div id="map" class="mb-4 mt-3"
+        style="width: 100%; height: 600px;"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <%= f.input :images, :input_html => { :multiple => true }%>
+
+      <%= f.submit "Create Spot", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
