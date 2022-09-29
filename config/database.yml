@@ -17,14 +17,17 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-
+  host: ec2-34-200-205-45.compute-1.amazonaws.com
+  database: d50ap1b2q06bi7
+  username: ozznmbmekztlcz
+  port: 5432
+  password: b311cd989f5014e4821c7f35ea25f44bd8ba5c685078c567d82f83b36bcffeba
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: myapp_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,7 +61,6 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: myapp_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,6 +84,3 @@ test:
 #
 production:
   <<: *default
-  database: myapp_production
-  username: myapp
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
