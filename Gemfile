@@ -32,6 +32,7 @@ gem 'country_select', '~> 6.0'
 gem 'jquery'
 gem 'geocoder'
 gem 'rqrcode'
+gem 'net-smtp'
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'open-uri'
