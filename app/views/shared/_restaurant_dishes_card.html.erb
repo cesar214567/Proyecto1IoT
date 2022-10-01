@@ -1,5 +1,5 @@
 
-<%= link_to restaurant_dish_path(dish) do %>
+<%= link_to restaurant_dish_path(dish.restaurant,dish) do %>
   <div class="dish-card mb-3">
     <div class="dish-image">
       <%= cl_image_tag dish.image.key, width: 200, height: 150, crop: :fit %>
