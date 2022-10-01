@@ -21,5 +21,5 @@ data = {
 data.each do |key, value|
   ingredient = Ingredient.create!(name: key)
   ingredient_image = URI.open(value)
-  ingredient.image.attach({ io: ingredient_image, filename: "image#{key}", content_type: 'image/png' })
+  ingredient.image.attach!({ io: ingredient_image, filename: "image#{key}", content_type: 'image/png' })
 end
