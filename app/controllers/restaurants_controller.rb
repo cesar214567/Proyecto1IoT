@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :query_data ]
 
   def index
     @restaurants = current_user.restaurants
@@ -44,7 +45,12 @@ class RestaurantsController < ApplicationController
     url = request.url.split('/')
     url.pop
     url = url.join('/')
-    send_data RQRCode::QRCode.new(url).as_png(size: 300, type: 'image/png', disposition: 'attachment')
+    send_data RQRCode::QRCode.new(url+"/query_data").as_png(size: 300, type: 'image/png', disposition: 'attachment')
+  end
+
+  def query_data
+    restaurant = Restaurant.includes(dishes: [:ingredients]).find(params[:restaurant_id])
+    render json: restaurant.to_json(:include => [ :dishes => {:include => [  :image, :ingredients => {include: :image}]} ])
   end
 
   private
