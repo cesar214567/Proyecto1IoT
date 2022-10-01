@@ -1,7 +1,7 @@
 class Restaurant < ApplicationRecord
   belongs_to :user
   has_many_attached :images
-  has_many :dishes
+  has_many :dishes,dependent: :destroy
 
   validates :name, :description, :longitude, :latitude, presence: true
   reverse_geocoded_by :latitude, :longitude, address: :loc

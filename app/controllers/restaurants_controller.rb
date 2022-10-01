@@ -53,6 +53,13 @@ class RestaurantsController < ApplicationController
     render json: restaurant.to_json(:include => [ :dishes => {:include => [  :image, :ingredients => {include: :image}]} ])
   end
 
+  def destroy
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.destroy
+    redirect_to restaurants_path
+      
+  end
+
   private
 
   def restaurant_params
