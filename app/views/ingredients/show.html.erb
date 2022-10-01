@@ -1,0 +1,11 @@
+<div class="banner-bait color-brown" >
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h1><strong><%=  @ingredient.name.capitalize %></strong></h1>
+        <%= cl_image_tag @ingredient.image.key, width: 200, height: 150, crop: :fit, class: "ml-0" %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

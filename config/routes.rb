@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :dish_ingredients
   end
 
+  resources :ingredients
+
   get 'restaurants/:restaurant_id/downloadQr', as: :download, to: 'restaurants#downloadqr'
   get 'restaurants/:restaurant_id/query_data', as: :query_data, to: 'restaurants#query_data'
 end
