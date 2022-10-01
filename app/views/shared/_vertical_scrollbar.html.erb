@@ -8,6 +8,7 @@
           <%= render "shared/restaurant_dishes_card", dish: element  %>
         <% elsif element.is_a? Ingredient %>
           <%= render "shared/dish_ingredients_card", ingredient: element  %>
+        <% end %>
       <% end %>
     </div>
   </div>
