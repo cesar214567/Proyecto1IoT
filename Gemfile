@@ -25,7 +25,7 @@ gem 'pg_search', '~> 2.3.0'
 gem 'cloudinary', '~> 1.16.0'
 gem 'devise'
 gem 'simple_form'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'
 gem 'bootstrap', '~> 5.2.1'
 gem 'jquery-rails'
 gem 'country_select', '~> 6.0'
